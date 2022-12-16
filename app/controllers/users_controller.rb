@@ -2,10 +2,10 @@ class UsersController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found
 
 
-    # def index 
-    #     user = User.all
-    #     render json: user, status: :ok
-    # end 
+    def index 
+        user = User.all
+        render json: user, status: :ok
+    end 
 
     def show 
         user = find_user
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     end 
 
     def create_user_params 
-      params.permit(:username, :password)
+      params.permit(:username, :password, :email)
     end 
 
     def update_user_params

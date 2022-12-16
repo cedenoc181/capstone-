@@ -16,6 +16,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_15_062416) do
     t.integer "physical_therapist_id"
     t.string "claim"
     t.boolean "home_visit"
+    t.datetime "scheduled"
+    t.string "am_pm"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -16,6 +16,8 @@ class AppointmentsController < ApplicationController
         appointment = Appointment.create!(create_appointment_params)
         render json: appointment
     end
+    # when creating a new appointment the date and time must be entered in this specific format 
+    # "yyyy-mm-dd  hh:mm:ss" the date must be in a string as well, real data would look like this "2022-12-15 03:30:00"
 
     def destroy
         appointment = find_appointment
@@ -30,7 +32,7 @@ class AppointmentsController < ApplicationController
     end
 
     def create_appointment_params
-        params.permit(:user_id, :physical_therapist_id, :date, :time, :claim, :home_visit)
+        params.permit(:user_id, :physical_therapist_id, :scheduled, :claim, :home_visit, :am_pm)
     end
 
     def render_record_not_found 

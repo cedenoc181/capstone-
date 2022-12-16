@@ -5,8 +5,8 @@ class CreateAppointments < ActiveRecord::Migration[7.0]
       t.integer :physical_therapist_id
       t.string :claim 
       t.boolean :home_visit
-      t.date :date
-      t.time 
+      t.datetime :scheduled
+      t.string :am_pm
 
       t.timestamps
     end

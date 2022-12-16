@@ -28,17 +28,17 @@ PhysicalTherapist.create!(
     last_name: Faker::Name.last_name, 
     profile_picture: Faker::Avatar.image,
     clinic_address: Faker::Address.street_address,
-    specialization: specialty.shuffle.second,
+    specialization: specialty.shuffle.slice(0, 2),
     title: level.shuffle.first, 
-    insurances: companies.shuffle.first,
+    insurances: companies.shuffle.slice(0, 6),
     home_visits:Faker::Boolean.boolean,
     about_me: Faker::Lorem.paragraph(sentence_count: 2)
   )
 end 
 
 p "seeding appointments 🌱"
-# , date: Faker::Date.forward(days: 23)
-Appointment.create!(user_id: 1, physical_therapist_id: 4, claim: "Ive been sufering from pain on my lower back for the past 2 weeks", home_visit: true)
+Appointment.create!(user_id: 1, physical_therapist_id: 2, claim: "Ive been sufering from pain on my lower back for the past 2 weeks", scheduled: "2022-12-15 03:30", am_pm: "PM", home_visit: true)
+Appointment.create!(user_id: 1, physical_therapist_id: 2, claim: "Follow up", scheduled: "2022-12-30 01:30", am_pm: "PM", home_visit: true)
 
 p "seeding exercises 🌱"
 
