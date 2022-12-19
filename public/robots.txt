@@ -1,1 +1,7 @@
+<<<<<<< HEAD
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+=======
 # See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+>>>>>>> 5c8d84703a46b725890426c5534867b0ca30a3ed
